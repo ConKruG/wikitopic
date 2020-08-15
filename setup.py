@@ -16,10 +16,7 @@ LONG_DESC_TYPE = "text/markdown"
 
 INSTALL_REQUIRES = [
       'nltk',
-      'wikipedia',
-      're',
-      'string',
-      'collections'
+      'wikipedia'
 ]
 
 setup(name=PACKAGE_NAME,
