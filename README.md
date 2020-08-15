@@ -59,3 +59,5 @@ print("Best matched topic is: ", result[0])
 print("From general to specific topic: ", result[1])
 print("Top 10 frequent words", result[2])
 ```
+### Acknowledgements
+This work was part of a bigger project that was funded by the European Union’s Horizon 2020 research and innovation program via MALAGA Project under grant agreement No 844864 funded this work.
