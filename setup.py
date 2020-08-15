@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 HERE = pathlib.Path(__file__).parent
 
-VERSION = '0.1.0'
+VERSION = '1.0.2'
 PACKAGE_NAME = 'wikitopic'
 AUTHOR = 'Arash Kia and Finbarr Murphy'
 AUTHOR_EMAIL = 'arash.nkia@gmail.com'
