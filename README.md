@@ -33,8 +33,8 @@ pip install wikitopic
 This lines of code show a simple example of topic extraction with wikitopic:
 
 ```sh
-from wikitopic import WikiTopicExtractor
-print(WikiTopicExtractor("This is a sample English text"))
+from wikitopic import wikitopic
+print(wikitopic.WikiTopicExtractor("This is a sample English text"))
 ```
 
 As you can see, it is possible to put a sentence directly as input of the WikiTopicExtractor class and get the output.
@@ -49,11 +49,11 @@ As you can see, it is possible to put a sentence directly as input of the WikiTo
 Or you can read a text file from a path and find the wikitopic:
 
 ```sh
-import wikitopic
+from wikitopic import wikitopic as wik
 
 path = 'c://cav//taxonomy//sampleText.txt' #Change the path according to your own system
-text = wikitopic.read_from_file(path)
-w = WikiTopicExtractor(text, 10) #10 for top 10 frequent words
+text = wik.read_from_file(path)
+w = wik.WikiTopicExtractor(text, 10) #10 for top 10 frequent words
 result = w.output_topic()
 
 print("Best matched topic is: ", result[0])
