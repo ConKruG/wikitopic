@@ -8,7 +8,8 @@ The package uses the acsending sorted frequent words in a list of lists structur
 Please if you use the package in your research, cite it in your paper like this:
 Kia, A. N., Murphy, F., 2020. Wikipedia topic extractor. GitHub; [accessed *date*]. https://github.com/conkrug/wikitopic. 
 ## Installation information and requirements
-pre-requisites for the package are nltk and wikipedia package in python. If not installed you can install them with these commands
+pre-requisites for the package are nltk and wikipedia package in python. Also re, string, and collections must be installed first.
+If nltk and wikipedia packages are not installed you can install them with these commands:
 
 ```sh
 pip install nltk
