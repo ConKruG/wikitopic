@@ -66,9 +66,9 @@ class WikiTopicExtractor:
 
     
     def prepare_text(self):
-    """ INPUT: A STRING
-    ### OUTPUT: A LEMATIZED STRING WITHOUT NUMBERS, PUNCTUATIONS, AND STOP WORDS
-    """
+        """ INPUT: A STRING
+        ### OUTPUT: A LEMATIZED STRING WITHOUT NUMBERS, PUNCTUATIONS, AND STOP WORDS
+        """
         descriptions = []
         descriptions.append(self.text)
         corpus = [self.normalize_text(s) for s in descriptions]
