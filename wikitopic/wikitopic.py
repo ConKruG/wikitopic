@@ -144,7 +144,7 @@ class WikiTopicExtractor:
         numOfKeywords = 100
 
         custom_kw_extractor = KeywordExtractor(lan=language, n=max_ngram_size, dedupLim=deduplication_thresold, dedupFunc=deduplication_algo, windowsSize=windowSize, top=numOfKeywords, features=None)
-        keywords = custom_kw_extractor.extract_keywords(text)
+        keywords = custom_kw_extractor.extract_keywords(T)
 
         L = []
         for kw in keywords:
