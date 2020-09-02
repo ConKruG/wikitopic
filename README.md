@@ -15,6 +15,11 @@ If nltk and wikipedia packages are not installed you can install them with these
 pip install nltk
 pip install wikipedia
 ```
+You shoud also install Yake keyword extractor with this command:
+
+```sh
+pip install git+https://github.com/LIAAD/yake
+```
 
 For Anaconda distribution you can do the following:
 
