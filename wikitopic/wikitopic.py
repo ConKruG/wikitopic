@@ -27,6 +27,7 @@ from collections import Counter
 
 from wikipedia import search
 
+from yake import KeywordExtractor
 
 class WikiTopicExtractor:
     
@@ -133,6 +134,24 @@ class WikiTopicExtractor:
         return L, top_n
     
     
+    def keyword_list(self, T):
+
+        language = "en"
+        max_ngram_size = 1
+        deduplication_thresold = 0.9
+        deduplication_algo = 'seqm'
+        windowSize = 1
+        numOfKeywords = 100
+
+        custom_kw_extractor = KeywordExtractor(lan=language, n=max_ngram_size, dedupLim=deduplication_thresold, dedupFunc=deduplication_algo, windowsSize=windowSize, top=numOfKeywords, features=None)
+        keywords = custom_kw_extractor.extract_keywords(text)
+
+        L = []
+        for kw in keywords:
+            L.append(kw[0])
+
+        return L, L[:self.n]
+    
     def doc2top(self, wordcount_list):
         
         """ Parameters: wordcoult_list: list of lists
@@ -148,7 +167,7 @@ class WikiTopicExtractor:
 
         for q in wordcount_list:
             #print('Q: ', q)
-            query = query + q
+            query = query + [q]
             final_query = " ".join(query)
             #print(len(final_query))
             if len(final_query) == 0:
@@ -178,7 +197,7 @@ class WikiTopicExtractor:
         top n frequent words in the input text"""
         
         T = self.prepare_text()
-        L, top_n = self.word_count(T)
+        L, top_n = self.keyword_list(T)
         best_topic, path_to_topic = self.doc2top(L)
         
         return best_topic, path_to_topic, top_n
@@ -186,9 +205,9 @@ class WikiTopicExtractor:
     def __str__(self):
         
         T = self.prepare_text()
-        L, top_n = self.word_count(T)
+        L, top_n = self.keyword_list(T)
         best_topic, path_to_topic = self.doc2top(L)
-        return "Best topic extracted for the document is: " + str(best_topic) + "\n" + "Path to the topic is:\n" + str(path_to_topic) + "\n" + str(self.n) + " most frequent words in the document are: \n" + str(top_n)
+        return "Best topic extracted for the document is: " + str(best_topic) + "\n" + "Path to the topic is:\n" + str(path_to_topic) + "\n" + str(self.n) + " most important keywords in the document are: \n" + str(top_n)
 
 
 
